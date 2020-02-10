@@ -73,70 +73,6 @@
         </div>
     </div>
 
-    <!-- <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <h2 class="h5 mb-4">Your digital partner starts here.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente reprehenderit aspernatur, reiciendis explicabo doloribus aperiam sed sequi, aut repudiandae magni nobis voluptatem!</p>
-
-            <div class="d-flex align-items-center">
-              <span class="sign mr-4">
-                <img src="images/signature.svg" alt="" class="img-fluid">
-              </span>
-              <div>
-                <span class="d-block font-weight-bold">Mr. John Doe</span>
-                <span>CEO &amp; Co-Founder </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 ml-auto">
-            <h2 class="h5 mb-4">Our expertise and skills</h2>
-
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>Writing</span>
-                <span class="ml-auto">55%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>WordPress</span>
-                <span class="ml-auto">85%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>Bootstrap</span>
-                <span class="ml-auto">93%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 93%;" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>jQuery</span>
-                <span class="ml-auto">83%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 83%;" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <div class="site-section section-3" data-stellar-background-ratio="0.5" style="background-image: url('images/dmae2.png');">
       <div class="container">
@@ -156,8 +92,6 @@
           <div class="col-md-6 col-lg-4 mb-5">
             <div class="d-flex align-items-center counter">
                 <!-- <span class="icon-bubble_chart wrap-icon mr-3"></span> -->
-              
-              
               <span class="mr-3">
                   <img src="images/politica.png" alt="Image" class="img-fluid mx-auto ">
 
@@ -200,7 +134,7 @@
       <div class="container">
         <div class="row justify-content-center  mb-5">
           <div id="program" class="col-md-7 text-center">
-            <h3 class="section-heading text-center">Programa del Seminario</h3>
+            <h3 class="section-heading text-center">Programas del Seminario</h3>
             <p class="mb-5 lead">En esta sección encontrarás las actividades que se estarán realizado durante la semana</p>
 
           </div>

@@ -42,7 +42,7 @@
         <div class="container mb-3">
           <div class="d-flex align-items-center">
             <div class="site-logo mr-auto">
-              <a href="index.html">DMAE<span class="text-primary">.</span></a>
+              <a href="/">DMAE<span class="text-primary">.</span></a>
             </div>
             <div class="site-quick-contact d-none d-lg-flex ml-auto ">
               <div class="d-flex site-info align-items-center mr-5">
@@ -152,9 +152,9 @@
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/sweetalert2.all.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/app.js"></script>
-
     <script src="js/main.js"></script>
 
     <script>
@@ -180,6 +180,10 @@
           document.documentElement.scrollTop = 0;
           // element.classList.add('animated', 'animatedActive');
         }
+
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
         </script>
 
   </body>

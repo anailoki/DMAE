@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('content/content');
 });
 
-Route::get('/registro', function () {
+/**
+ * Users
+ */
+Route::resource('users', 'User\UserController', ['except' => ['create', 'edit']]); 
+
+Route::post('/registro', function () {
     return view('register');
 });

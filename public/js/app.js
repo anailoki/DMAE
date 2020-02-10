@@ -2318,72 +2318,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2535,6 +2469,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2552,7 +2490,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2798,7 +2735,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    onClick: function onClick() {
+      axios({
+        url: 'http://127.0.0.1:8000/programaDMAE.pdf',
+        method: 'GET',
+        responseType: 'blob'
+      }).then(function (response) {
+        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+        var fileLink = document.createElement('a');
+        fileLink.href = fileURL;
+        fileLink.setAttribute('download', 'programaDMAE.pdf');
+        document.body.appendChild(fileLink);
+        fileLink.click();
+      });
+    }
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -2914,7 +2883,125 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      name: '',
+      last_name: '',
+      email: '',
+      occupation: '',
+      career: '',
+      institution: '',
+      errorUser: 0,
+      errorName: 0,
+      errorLastName: 0,
+      errorEmail: 0,
+      errorInstituton: 0,
+      errorOccupation: 0,
+      evaluated: 0,
+      errorShowMsjUser: []
+    };
+  },
+  methods: {
+    registrarCategoria: function registrarCategoria() {
+      console.log('registrare');
+      this.evaluated = 0;
+
+      if (this.validationUser()) {
+        return;
+      }
+
+      var me = this;
+      axios.post('/users', {
+        'name': this.name,
+        'last_name': this.last_name,
+        'email': this.email,
+        'institution': this.institution,
+        'occupation': this.occupation,
+        'carrer': this.career
+      }).then(function (response) {
+        swal('Registrado!', 'El registro ha sido con éxito.', 'success');
+        me.cleanFields();
+      })["catch"](function (error) {
+        console.log(error);
+
+        if (error.response.status == 422) {
+          console.log(error.response.data.errors);
+          swal('Error!', 'Email ya ha sido utilizado', 'error');
+        } else {
+          swal('Error!', 'Intentelo de nuevo', 'error');
+          this.cleanFields();
+        }
+      });
+    },
+    validationUser: function validationUser() {
+      this.errorUser = 0;
+      this.errorName = 0;
+      this.errorLastName = 0;
+      this.errorEmail = 0;
+      this.errorInstituton = 0;
+      this.errorOccupation = 0;
+      this.evaluated = 1; // this.errorShowMsjUser =[];
+
+      if (!this.name) {
+        this.errorName = 1;
+        this.errorUser = 1;
+      }
+
+      if (!this.last_name) {
+        this.errorLastName = 1;
+        this.errorUser = 1;
+      }
+
+      if (!this.email) {
+        this.errorEmail = 1;
+        this.errorUser = 1;
+      }
+
+      if (!this.institution) {
+        this.errorInstituton = 1;
+        this.errorUser = 1;
+      }
+
+      if (this.occupation == '') {
+        this.errorOccupation = 1;
+        this.errorUser = 1;
+      } // if (this.errorShowMsjUser.length) this.errorUser = 1;
+
+
+      return this.errorUser;
+    },
+    cleanFields: function cleanFields() {
+      this.name = '';
+      this.last_name = '';
+      this.email = '';
+      this.occupation = '';
+      this.institution = '';
+      this.carrer = '';
+      this.evaluated = 0;
+    }
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -38537,7 +38624,7 @@ var staticRenderFns = [
               { staticClass: "col-md-7 text-center", attrs: { id: "program" } },
               [
                 _c("h3", { staticClass: "section-heading text-center" }, [
-                  _vm._v("Programa del Seminario")
+                  _vm._v("Programas del Seminario")
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "mb-5 lead" }, [
@@ -39079,14 +39166,8 @@ var staticRenderFns = [
                 },
                 [
                   _c("div", { staticClass: "col-md-8 mt-5 pt-5" }, [
-                    _c("h1", { staticClass: "mb-3" }, [
+                    _c("h1", { staticClass: "mb-3 title" }, [
                       _vm._v("Líderes del Proyecto")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores."
-                      )
                     ]),
                     _vm._v(" "),
                     _c("p", [
@@ -39096,7 +39177,7 @@ var staticRenderFns = [
                           staticClass: "btn btn-primary",
                           attrs: { href: "#" }
                         },
-                        [_vm._v("Learn More")]
+                        [_vm._v("Conocer mas")]
                       )
                     ])
                   ])
@@ -39109,26 +39190,20 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "site-section bg-light" }, [
         _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "row justify-content-center text-center mb-5 section-2-title"
-            },
-            [
-              _c("div", { staticClass: "col-md-8" }, [
-                _c("h3", { staticClass: "scissors text-center" }, [
+          _c("div", { staticClass: "row justify-content-center text-center" }, [
+            _c(
+              "div",
+              {
+                staticClass: "col-7 text-center mb-5",
+                attrs: { id: "register" }
+              },
+              [
+                _c("h1", { staticClass: "section-heading text-center" }, [
                   _vm._v("Conoce a nuestros líderes del proyecto")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "mb-5 lead" }, [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime neque!"
-                  )
                 ])
-              ])
-            ]
-          ),
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "row align-items-stretch" }, [
             _c("div", { staticClass: "col-lg-4 col-md-6 mb-5" }, [
@@ -39295,14 +39370,8 @@ var staticRenderFns = [
                 },
                 [
                   _c("div", { staticClass: "col-md-5 mt-5 pt-5" }, [
-                    _c("h1", { staticClass: "mb-3" }, [
+                    _c("h1", { staticClass: "mb-3 title" }, [
                       _vm._v("Nuestro Proyecto")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores."
-                      )
                     ]),
                     _vm._v(" "),
                     _c("p", [
@@ -39480,15 +39549,17 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass:
-                    "row align-items-center justify-content-center text-center"
+                    "row align-items-center justify-content-center text-right"
                 },
                 [
+                  _c("div", { staticClass: "col-md-7" }),
+                  _vm._v(" "),
                   _c("div", { staticClass: "col-md-5 mt-5 pt-5" }, [
                     _c("h1", { staticClass: "mb-3" }, [_vm._v("Programa")]),
                     _vm._v(" "),
-                    _c("p", [
+                    _c("h4", { staticClass: "text-white" }, [
                       _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores."
+                        "En esta sección podrás conocer mas acerca de lo que el programa trae para ti"
                       )
                     ]),
                     _vm._v(" "),
@@ -39497,9 +39568,9 @@ var staticRenderFns = [
                         "a",
                         {
                           staticClass: "btn btn-primary",
-                          attrs: { href: "#" }
+                          attrs: { href: "#programa" }
                         },
-                        [_vm._v("Learn More")]
+                        [_vm._v("Conocer más")]
                       )
                     ])
                   ])
@@ -39511,30 +39582,47 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "site-section" }, [
-        _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "container", attrs: { id: "programa" } }, [
+          _c("div", { staticClass: "row justify-content-center text-center" }, [
+            _c(
+              "div",
+              {
+                staticClass: "col-7 text-center mb-5",
+                attrs: { id: "register" }
+              },
+              [
+                _c("h1", { staticClass: "section-heading text-center" }, [
+                  _vm._v("Información del Programa")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-6 col-lg-4 mb-4" }, [
               _c(
                 "div",
                 {
                   staticClass: "news-1",
-                  staticStyle: { "background-image": "url('images/img_1.jpg')" }
+                  staticStyle: {
+                    "background-image": "url('images/unisonpanoramica.jpg')"
+                  }
                 },
                 [
                   _c("div", { staticClass: "text" }, [
                     _c("h3", [
                       _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Consectetur adipisicing elit")
+                        _vm._v("Ceremonia de Bienvenida")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "category d-block mb-3" }, [
-                      _vm._v("Web Development")
+                      _vm._v("Firmas de Convenios")
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "mb-4" }, [
                       _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                        "México - Alemania, inicio de nuevos proyectos de investigación."
                       )
                     ]),
                     _vm._v(" "),
@@ -39556,24 +39644,20 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass: "news-1",
-                  staticStyle: { "background-image": "url('images/img_2.jpg')" }
+                  staticStyle: {
+                    "background-image": "url('images/plantas-bio.jpg')"
+                  }
                 },
                 [
                   _c("div", { staticClass: "text" }, [
                     _c("h3", [
                       _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Consectetur adipisicing elit")
+                        _vm._v("Biodiversidad de Plantas y Terapéutica")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "category d-block mb-3" }, [
-                      _vm._v("Web Development")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-4" }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      )
+                      _vm._v("Región Endémica de México")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -39594,24 +39678,20 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass: "news-1",
-                  staticStyle: { "background-image": "url('images/img_3.jpg')" }
+                  staticStyle: {
+                    "background-image": "url('images/oldman.jpg')"
+                  }
                 },
                 [
                   _c("div", { staticClass: "text" }, [
                     _c("h3", [
                       _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Consectetur adipisicing elit")
+                        _vm._v("Oftalmología Experimental")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "category d-block mb-3" }, [
-                      _vm._v("Web Development")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-4" }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      )
+                      _vm._v("Desarollo de nuevas terapias")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -39632,24 +39712,18 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass: "news-1",
-                  staticStyle: { "background-image": "url('images/img_3.jpg')" }
+                  staticStyle: { "background-image": "url('images/algas.png')" }
                 },
                 [
                   _c("div", { staticClass: "text" }, [
                     _c("h3", [
                       _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Consectetur adipisicing elit")
+                        _vm._v("Foro de Discusión")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "category d-block mb-3" }, [
-                      _vm._v("Web Development")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-4" }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      )
+                      _vm._v("Biodiversidad de Extractos Naturales")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -39670,24 +39744,18 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass: "news-1",
-                  staticStyle: { "background-image": "url('images/img_1.jpg')" }
+                  staticStyle: {
+                    "background-image": "url('images/bucida.jpg')"
+                  }
                 },
                 [
                   _c("div", { staticClass: "text" }, [
                     _c("h3", [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Consectetur adipisicing elit")
-                      ])
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Conferencia")])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "category d-block mb-3" }, [
-                      _vm._v("Web Development")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-4" }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      )
+                      _vm._v("Modulación antioxidante y angiogénica")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -39708,24 +39776,20 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass: "news-1",
-                  staticStyle: { "background-image": "url('images/img_2.jpg')" }
+                  staticStyle: {
+                    "background-image": "url('images/visiondmae.jpg')"
+                  }
                 },
                 [
                   _c("div", { staticClass: "text" }, [
                     _c("h3", [
                       _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Consectetur adipisicing elit")
+                        _vm._v("Degeneración Macular")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "category d-block mb-3" }, [
-                      _vm._v("Web Development")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-4" }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      )
+                      _vm._v("Tratamientos")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -39759,13 +39823,26 @@ var staticRenderFns = [
               [
                 _c("div", { staticClass: "col-7 text-center mb-5" }, [
                   _c("p", { staticClass: "lead text-white" }, [
-                    _vm._v("Suscipit libero voluptate")
+                    _vm._v(
+                      "Comienza a explorar lo que este simposio tiene para ti"
+                    )
                   ]),
                   _vm._v(" "),
-                  _c("h2", { staticClass: "text-white" }, [
-                    _vm._v(
-                      "Get ready to start your exciting journey. Our agency"
-                    )
+                  _c("h1", { staticClass: "text-white" }, [
+                    _vm._v("Descarga nuestro programa")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6 programa" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          attrs: { type: "button" }
+                        },
+                        [_vm._v("Descargar Programa")]
+                      )
+                    ])
                   ])
                 ])
               ]
@@ -39779,15 +39856,18 @@ var staticRenderFns = [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-6 col-lg-4 mb-5" }, [
               _c("div", { staticClass: "d-flex align-items-center counter" }, [
-                _c("span", { staticClass: "icon-building-o wrap-icon mr-3" }),
+                _c("span", { staticClass: "mr-3" }, [
+                  _c("img", {
+                    staticClass: "img-fluid mx-auto ",
+                    attrs: { src: "images/politica.png", alt: "Image" }
+                  })
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "text" }, [
-                  _c("span", { staticClass: "d-block number" }, [
-                    _vm._v("14k")
-                  ]),
+                  _c("span", { staticClass: "d-block number" }, [_vm._v("8")]),
                   _vm._v(" "),
-                  _c("span", { staticClass: "caption" }, [
-                    _vm._v("number of firms")
+                  _c("span", { staticClass: "caption mt-3" }, [
+                    _vm._v("Conferencias")
                   ])
                 ])
               ])
@@ -39795,30 +39875,34 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "col-md-6 col-lg-4 mb-5" }, [
               _c("div", { staticClass: "d-flex align-items-center counter" }, [
-                _c("span", { staticClass: "icon-home2 wrap-icon mr-3" }),
+                _c("span", { staticClass: "mr-3" }, [
+                  _c("img", {
+                    staticClass: "img-fluid mx-auto ",
+                    attrs: { src: "images/trabajo.png", alt: "Image" }
+                  })
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "text" }, [
-                  _c("span", { staticClass: "d-block number" }, [_vm._v("2k")]),
+                  _c("span", { staticClass: "d-block number" }, [_vm._v("4")]),
                   _vm._v(" "),
-                  _c("span", { staticClass: "caption" }, [
-                    _vm._v("in house crews")
-                  ])
+                  _c("span", { staticClass: "caption" }, [_vm._v("Talleres")])
                 ])
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-6 col-lg-4 mb-5" }, [
               _c("div", { staticClass: "d-flex align-items-center counter" }, [
-                _c("span", { staticClass: "icon-code wrap-icon mr-3" }),
+                _c("span", { staticClass: "mr-3" }, [
+                  _c("img", {
+                    staticClass: "img-fluid mx-auto ",
+                    attrs: { src: "images/adn.png", alt: "Image" }
+                  })
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "text" }, [
-                  _c("span", { staticClass: "d-block number" }, [
-                    _vm._v("3920k")
-                  ]),
+                  _c("span", { staticClass: "d-block number" }, [_vm._v("5")]),
                   _vm._v(" "),
-                  _c("span", { staticClass: "caption" }, [
-                    _vm._v("line of codes")
-                  ])
+                  _c("span", { staticClass: "caption" }, [_vm._v("Visitas")])
                 ])
               ])
             ])
@@ -39849,133 +39933,555 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "site-section bg-light",
+        attrs: { id: "contact-section" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-8 mb-5" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "form-horizontal",
+                  attrs: {
+                    action: "",
+                    method: "post",
+                    enctype: "multipart/form-data"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c("div", { staticClass: "col-md-6 mb-4 mb-lg-0" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "text-input" }
+                        },
+                        [_vm._v("Nombre")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.name,
+                            expression: "name"
+                          }
+                        ],
+                        staticClass: "form-control ",
+                        class: _vm.evaluated
+                          ? _vm.errorName
+                            ? "is-invalid"
+                            : "is-valid"
+                          : "",
+                        attrs: { type: "text", placeholder: " Ingrese Nombre" },
+                        domProps: { value: _vm.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.name = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errorName,
+                              expression: "errorName"
+                            }
+                          ],
+                          staticClass: "invalid-feedback"
+                        },
+                        [
+                          _vm._v(
+                            "\n                   Por favor ingrese un nombre.\n                 "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "text-input" }
+                        },
+                        [_vm._v("Apellidos")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.last_name,
+                            expression: "last_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        class: _vm.evaluated
+                          ? _vm.errorLastName
+                            ? "is-invalid"
+                            : "is-valid"
+                          : "",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Ingrese Apellidos"
+                        },
+                        domProps: { value: _vm.last_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.last_name = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errorLastName,
+                              expression: "errorLastName"
+                            }
+                          ],
+                          staticClass: "invalid-feedback"
+                        },
+                        [
+                          _vm._v(
+                            "\n                   Por favor ingrese los apellidos.\n                 "
+                          )
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md-6 form-control-label",
+                        attrs: { for: "text-input" }
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-md-6 form-control-label",
+                            attrs: { for: "text-input" }
+                          },
+                          [_vm._v("Correo Electrónico")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.email,
+                              expression: "email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: _vm.evaluated
+                            ? _vm.errorEmail
+                              ? "is-invalid"
+                              : "is-valid"
+                            : "",
+                          attrs: {
+                            type: "text",
+                            placeholder: "Ingrese Correo Electronico",
+                            required: ""
+                          },
+                          domProps: { value: _vm.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.email = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.errorEmail,
+                                expression: "errorEmail"
+                              }
+                            ],
+                            staticClass: "invalid-feedback"
+                          },
+                          [
+                            _vm._v(
+                              "\n                   Por favor ingrese su correo.\n                 "
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "text-input" }
+                        },
+                        [_vm._v("Institucion")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.institution,
+                            expression: "institution"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        class: _vm.evaluated
+                          ? _vm.errorInstituton
+                            ? "is-invalid"
+                            : "is-valid"
+                          : "",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Ingrese Institución"
+                        },
+                        domProps: { value: _vm.institution },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.institution = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errorInstituton,
+                              expression: "errorInstituton"
+                            }
+                          ],
+                          staticClass: "invalid-feedback"
+                        },
+                        [
+                          _vm._v(
+                            "\n                     Por favor ingrese la institución.\n                   "
+                          )
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "exampleFormControlSelect1" }
+                        },
+                        [_vm._v("Ocupación")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.occupation,
+                              expression: "occupation"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: _vm.evaluated
+                            ? _vm.errorOccupation
+                              ? "is-invalid"
+                              : "is-valid"
+                            : "",
+                          attrs: { id: "exampleFormControlSelect1" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.occupation = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { disabled: "", value: "" } }, [
+                            _vm._v("Seleccione una Ocupación")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "profesional" } }, [
+                            _vm._v("Profesional")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "estudiante" } }, [
+                            _vm._v("Estudiante")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "otros" } }, [
+                            _vm._v("Otros")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.errorOccupation,
+                                  expression: "errorOccupation"
+                                }
+                              ],
+                              staticClass: "invalid-feedback"
+                            },
+                            [
+                              _vm._v(
+                                "\n                       Por favor ingrese la institución.\n                     "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.occupation == "estudiante",
+                            expression: "occupation=='estudiante'"
+                          }
+                        ],
+                        staticClass: "col-md-6"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-md-3 form-control-label",
+                            attrs: { for: "text-input" }
+                          },
+                          [_vm._v("Carrera")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.career,
+                              expression: "career"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            placeholder: "Ingrese Carrera"
+                          },
+                          domProps: { value: _vm.career },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.career = $event.target.value
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c("div", { staticClass: "col-md-6 btn-register" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-primary  btn-block btn-primary text-white py-3 px-5",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              return _vm.registrarCategoria()
+                            }
+                          }
+                        },
+                        [_vm._v("Registrarme")]
+                      )
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "ftco-blocks-cover-1" }, [
-        _c(
-          "div",
-          {
-            staticClass: "site-section-cover overlay",
-            staticStyle: { "background-image": "url('images/eye.jpg')" },
-            attrs: { "data-stellar-background-ratio": "0.5" }
-          },
-          [
-            _c("div", { staticClass: "container" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "row align-items-center justify-content-center text-right"
-                },
-                [
-                  _c("div", { staticClass: "col-md-4 mt-5 pt-5" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-8 mt-5 pt-5" }, [
-                    _c("h1", { staticClass: "mb-3" }, [_vm._v("Registrate")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores."
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mt-5" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-primary",
-                          attrs: { href: "#register" }
-                        },
-                        [_vm._v("¡Registrarme!")]
-                      )
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
+    return _c("div", { staticClass: "ftco-blocks-cover-1" }, [
       _c(
         "div",
         {
-          staticClass: "site-section bg-light",
-          attrs: { id: "contact-section" }
+          staticClass: "site-section-cover overlay",
+          staticStyle: { "background-image": "url('images/eye.jpg')" },
+          attrs: { "data-stellar-background-ratio": "0.5" }
         },
         [
           _c("div", { staticClass: "container" }, [
             _c(
               "div",
-              { staticClass: "row justify-content-center text-center" },
+              {
+                staticClass:
+                  "row align-items-center justify-content-center text-right"
+              },
               [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-7 text-center mb-5",
-                    attrs: { id: "register" }
-                  },
-                  [
-                    _c("h2", { staticClass: "section-heading text-center" }, [
-                      _vm._v("Información de Registro")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!"
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-8 mb-5" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 ml-auto" }, [
-                _c("div", { staticClass: "bg-white p-3 p-md-5" }, [
-                  _c("h3", { staticClass: "text-black mb-4" }, [
-                    _vm._v("Información de Contacto")
+                _c("div", { staticClass: "col-md-6 mt-5 pt-5" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6 mt-5 pt-5" }, [
+                  _c("h1", { staticClass: "mb-3" }, [_vm._v("Registrate")]),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "text-white" }, [
+                    _vm._v(
+                      "Solo tienes que completar la información que se encuentra a continuación."
+                    )
                   ]),
                   _vm._v(" "),
-                  _c("ul", { staticClass: "list-unstyled footer-link" }, [
-                    _c("li", { staticClass: "d-block mb-3" }, [
-                      _c("span", { staticClass: "d-block text-black" }, [
-                        _vm._v("Direccion:")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [
-                        _vm._v("Blvd. Luis Encinas y Rosales S/N,Col. Centro")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "d-block mb-3" }, [
-                      _c("span", { staticClass: "d-block text-black" }, [
-                        _vm._v("Teléfono:")
-                      ]),
-                      _c("span", [_vm._v("(662) 259.2208")])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "d-block mb-3" }, [
-                      _c("span", { staticClass: "d-block text-black" }, [
-                        _vm._v("Email:")
-                      ]),
-                      _c("span", [_vm._v("simposioDMAE@gmail.com")])
-                    ])
+                  _c("p", { staticClass: "mt-5" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { href: "#register" }
+                      },
+                      [_vm._v("¡Registrarme!")]
+                    )
                   ])
                 ])
-              ])
-            ])
+              ]
+            )
           ])
         ]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row justify-content-center text-center" },
+      [
+        _c(
+          "div",
+          { staticClass: "col-7 text-center mb-5", attrs: { id: "register" } },
+          [
+            _c("h1", { staticClass: "section-heading text-center" }, [
+              _vm._v("Información de Registro")
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-4 ml-auto" }, [
+      _c("div", { staticClass: "bg-white p-3 p-md-5" }, [
+        _c("h3", { staticClass: "text-black mb-4" }, [
+          _vm._v("Información de Contacto")
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "list-unstyled footer-link" }, [
+          _c("li", { staticClass: "d-block mb-3" }, [
+            _c("span", { staticClass: "d-block text-black" }, [
+              _vm._v("Direccion:")
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("Blvd. Luis Encinas y Rosales S/N,Col. Centro")])
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "d-block mb-3" }, [
+            _c("span", { staticClass: "d-block text-black" }, [
+              _vm._v("Teléfono:")
+            ]),
+            _c("span", [_vm._v("(662) 259.2208")])
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "d-block mb-3" }, [
+            _c("span", { staticClass: "d-block text-black" }, [
+              _vm._v("Email:")
+            ]),
+            _c("span", [_vm._v("simposioDMAE@gmail.com")])
+          ])
+        ])
+      ])
     ])
   }
 ]

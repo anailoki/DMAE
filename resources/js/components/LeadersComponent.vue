@@ -5,9 +5,8 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-8 mt-5 pt-5">
-              <h1 class="mb-3">Líderes del Proyecto</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
-              <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              <h1 class="mb-3 title">Líderes del Proyecto</h1>
+              <p><a href="#" class="btn btn-primary">Conocer mas</a></p>
             </div>
           </div>
         </div>
@@ -18,12 +17,17 @@
 
     <div class="site-section bg-light">
       <div class="container">
-        <div class="row justify-content-center text-center mb-5 section-2-title">
+        <div class="row justify-content-center text-center">
+          <div id="register" class="col-7 text-center mb-5">
+              <h1 class="section-heading text-center">Conoce a nuestros líderes del proyecto</h1>
+          </div>
+        </div>
+        <!-- <div class="row justify-content-center text-center mb-5 section-2-title">
           <div class="col-md-8">
             <h3 class="scissors text-center">Conoce a nuestros líderes del proyecto</h3>
             <p class="mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime neque!</p>
           </div>
-        </div>
+        </div> -->
         <div class="row align-items-stretch">
 
           <div class="col-lg-4 col-md-6 mb-5">

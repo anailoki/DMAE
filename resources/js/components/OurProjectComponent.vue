@@ -5,8 +5,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-5 mt-5 pt-5">
-              <h1 class="mb-3">Nuestro Proyecto</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
+              <h1 class="mb-3 title">Nuestro Proyecto</h1>
               <p><a href="#" class="btn btn-primary">Learn More</a></p>
             </div>
           </div>

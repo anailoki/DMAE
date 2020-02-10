@@ -1,13 +1,17 @@
 <template>
   <div>
-      <div class="ftco-blocks-cover-1">
+    <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/eye.jpg')">
         <div class="container">
-          <div class="row align-items-center justify-content-center text-center">
+          <div class="row align-items-center justify-content-center text-right">
+            <div class="col-md-7">
+              
+              <!-- <button @click="onClick()">DownLoad</button> -->
+            </div>
             <div class="col-md-5 mt-5 pt-5">
               <h1 class="mb-3">Programa</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
-              <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              <h4 class="text-white">En esta sección podrás conocer mas acerca de lo que el programa trae para ti</h4>
+              <p><a href="#programa" class="btn btn-primary">Conocer más</a></p>
             </div>
           </div>
         </div>
@@ -16,70 +20,70 @@
 
 
     <div class="site-section">
-      <div class="container">
+      <div id="programa" class="container">
+        <div class="row justify-content-center text-center">
+          <div id="register" class="col-7 text-center mb-5">
+              <h1 class="section-heading text-center">Información del Programa</h1>
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="news-1" style="background-image: url('images/img_1.jpg');">
+            <div class="news-1" style="background-image: url('images/unisonpanoramica.jpg');">
               <div class="text">
-                <h3><a href="#">Consectetur adipisicing elit</a></h3>
-                <span class="category d-block mb-3">Web Development</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h3><a href="#">Ceremonia de Bienvenida</a></h3>
+                <span class="category d-block mb-3">Firmas de Convenios</span>
+                <p class="mb-4">México - Alemania, inicio de nuevos proyectos de investigación.</p>
                 <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
               </div>
             </div>
 
           </div>
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="news-1" style="background-image: url('images/img_2.jpg');">
-              <div class="text">
-                <h3><a href="#">Consectetur adipisicing elit</a></h3>
-                <span class="category d-block mb-3">Web Development</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+            <div class="news-1" style="background-image: url('images/plantas-bio.jpg');">
+                <div class="text">
+                  <h3><a href="#">Biodiversidad de Plantas y Terapéutica</a></h3>
+                  <span class="category d-block mb-3">Región Endémica de México</span>
+                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                </div>
               </div>
-            </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="news-1" style="background-image: url('images/img_3.jpg');">
-              <div class="text">
-                <h3><a href="#">Consectetur adipisicing elit</a></h3>
-                <span class="category d-block mb-3">Web Development</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+            <div class="news-1" style="background-image: url('images/oldman.jpg');">
+                <div class="text">
+                  <h3><a href="#">Oftalmología Experimental</a></h3>
+                  <span class="category d-block mb-3">Desarollo de nuevas terapias</span>
+                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                </div>
               </div>
-            </div>
 
           </div>
 
 
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="news-1" style="background-image: url('images/img_3.jpg');">
-              <div class="text">
-                <h3><a href="#">Consectetur adipisicing elit</a></h3>
-                <span class="category d-block mb-3">Web Development</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+            <div class="news-1" style="background-image: url('images/algas.png');">
+                <div class="text">
+                  <h3><a href="#">Foro de Discusión</a></h3>
+                  <span class="category d-block mb-3">Biodiversidad de Extractos Naturales</span>
+                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                </div>
               </div>
-            </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="news-1" style="background-image: url('images/img_1.jpg');">
-              <div class="text">
-                <h3><a href="#">Consectetur adipisicing elit</a></h3>
-                <span class="category d-block mb-3">Web Development</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+            <div class="news-1" style="background-image: url('images/bucida.jpg');">
+                <div class="text">
+                  <h3><a href="#">Conferencia</a></h3>
+                  <span class="category d-block mb-3">Modulación antioxidante y angiogénica</span> 
+                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a> 
+                </div>
               </div>
-            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="news-1" style="background-image: url('images/img_2.jpg');">
+          <div class="col-md-6 col-lg-4 mb-4"> 
+            <div class="news-1" style="background-image: url('images/visiondmae.jpg');"> 
               <div class="text">
-                <h3><a href="#">Consectetur adipisicing elit</a></h3>
-                <span class="category d-block mb-3">Web Development</span>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h3><a href="#">Degeneración Macular</a></h3>
+                <span class="category d-block mb-3">Tratamientos</span> 
                 <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
               </div>
             </div>
@@ -94,8 +98,13 @@
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-7 text-center mb-5">
-            <p class="lead text-white">Suscipit libero voluptate</p>
-            <h2 class="text-white">Get ready to start your exciting journey. Our agency</h2>
+            <p class="lead text-white">Comienza a explorar lo que este simposio tiene para ti</p>
+            <h1 class="text-white">Descarga nuestro programa</h1>
+            <div class="row">
+              <div class="col-6 programa">
+                  <button type="button" class="btn btn-primary">Descargar Programa</button>
+                </div>
+              </div>
           </div>
         </div>
         
@@ -107,28 +116,34 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-5">
             <div class="d-flex align-items-center counter">
-              <span class="icon-building-o wrap-icon mr-3"></span>
+              <span class="mr-3">
+                  <img src="images/politica.png" alt="Image" class="img-fluid mx-auto ">
+              </span>
               <div class="text">
-                <span class="d-block number">14k</span>
-                <span class="caption">number of firms</span>
+                <span class="d-block number">8</span>
+                <span class="caption mt-3">Conferencias</span>
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
             <div class="d-flex align-items-center counter">
-              <span class="icon-home2 wrap-icon mr-3"></span>
+              <span class="mr-3">
+                  <img src="images/trabajo.png" alt="Image" class="img-fluid mx-auto ">
+              </span>
               <div class="text">
-                <span class="d-block number">2k</span>
-                <span class="caption">in house crews</span>
+                <span class="d-block number">4</span>
+                <span class="caption">Talleres</span>
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
             <div class="d-flex align-items-center counter">
-              <span class="icon-code wrap-icon mr-3"></span>
+              <span class="mr-3">
+                  <img src="images/adn.png" alt="Image" class="img-fluid mx-auto ">
+              </span>
               <div class="text">
-                <span class="d-block number">3920k</span>
-                <span class="caption">line of codes</span>
+                <span class="d-block number">5</span>
+                <span class="caption">Visitas</span>
               </div>
             </div>
           </div>
@@ -136,10 +151,29 @@
       </div>
     </div>
   </div>
+  
 </template>
 
 <script>
     export default {
+       methods: {
+          onClick() {
+              axios({
+                    url: 'http://127.0.0.1:8000/programaDMAE.pdf',
+                    method: 'GET',
+                    responseType: 'blob',
+                }).then((response) => {
+                     var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                     var fileLink = document.createElement('a');
+   
+                     fileLink.href = fileURL;
+                     fileLink.setAttribute('download', 'programaDMAE.pdf');
+                     document.body.appendChild(fileLink);
+   
+                     fileLink.click();
+                });
+          }
+      },
         mounted() {
             console.log('Component mounted.')
         }

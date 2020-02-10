@@ -6,7 +6,7 @@
 
               <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav mr-auto ">
-                  <li @click="menu=0" :class="{ active: menu==0 }"><a href="#" class="nav-link">Inicio</a></li>
+                  <li :class="{ active: menu==0 }"><a href="/" class="nav-link">Inicio</a></li>
                   <li @click="menu=1" :class="{ active: menu==1 }"><a href="#" class="nav-link">Nuestro Proyecto</a></li>
                   <li @click="menu=2" :class="{ active: menu==2 }"><a href="#" class="nav-link">Programa</a></li>
                   <li @click="menu=3" :class="{ active: menu==3 }"><a href="#" class="nav-link">Líderes</a></li>
