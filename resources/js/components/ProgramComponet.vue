@@ -9,9 +9,9 @@
               <!-- <button @click="onClick()">DownLoad</button> -->
             </div>
             <div class="col-md-5 mt-5 pt-5">
-              <h1 class="mb-3">Programa</h1>
-              <h4 class="text-white">En esta sección podrás conocer mas acerca de lo que el programa trae para ti</h4>
-              <p><a href="#programa" class="btn btn-primary">Conocer más</a></p>
+              <h1 class="mb-3 animated bounceInDown">Programa</h1>
+              <h4 class="text-white animated bounceInRight slow">En esta sección podrás conocer mas acerca de lo que el programa trae para ti</h4>
+              <p><a href="#programa" class="btn btn-primary animated bounceInRight slow">Conocer más</a></p>
             </div>
           </div>
         </div>
@@ -30,10 +30,10 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="news-1" style="background-image: url('images/unisonpanoramica.jpg');">
               <div class="text">
-                <h3><a href="#">Ceremonia de Bienvenida</a></h3>
+                <h3>Ceremonia de Bienvenida</h3>
                 <span class="category d-block mb-3">Firmas de Convenios</span>
                 <p class="mb-4">México - Alemania, inicio de nuevos proyectos de investigación.</p>
-                <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                <a href="#descargarPrograma" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
               </div>
             </div>
 
@@ -41,18 +41,18 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="news-1" style="background-image: url('images/plantas-bio.jpg');">
                 <div class="text">
-                  <h3><a href="#">Biodiversidad de Plantas y Terapéutica</a></h3>
+                  <h3>Biodiversidad de Plantas y Terapéutica</h3>
                   <span class="category d-block mb-3">Región Endémica de México</span>
-                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                  <a href="#descargarPrograma" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="news-1" style="background-image: url('images/oldman.jpg');">
                 <div class="text">
-                  <h3><a href="#">Oftalmología Experimental</a></h3>
+                  <h3>Oftalmología Experimental</h3>
                   <span class="category d-block mb-3">Desarollo de nuevas terapias</span>
-                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                  <a href="#descargarPrograma" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
 
@@ -62,9 +62,9 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="news-1" style="background-image: url('images/algas.png');">
                 <div class="text">
-                  <h3><a href="#">Foro de Discusión</a></h3>
+                  <h3>Foro de Discusión</h3>
                   <span class="category d-block mb-3">Biodiversidad de Extractos Naturales</span>
-                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                  <a href="#descargarPrograma" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
           </div>
@@ -72,9 +72,9 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="news-1" style="background-image: url('images/bucida.jpg');">
                 <div class="text">
-                  <h3><a href="#">Conferencia</a></h3>
+                  <h3>Conferencia</h3>
                   <span class="category d-block mb-3">Modulación antioxidante y angiogénica</span> 
-                  <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a> 
+                  <a href="#descargarPrograma" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a> 
                 </div>
               </div>
           </div>
@@ -82,9 +82,9 @@
           <div class="col-md-6 col-lg-4 mb-4"> 
             <div class="news-1" style="background-image: url('images/visiondmae.jpg');"> 
               <div class="text">
-                <h3><a href="#">Degeneración Macular</a></h3>
+                <h3>Degeneración Macular</h3>
                 <span class="category d-block mb-3">Tratamientos</span> 
-                <a href="#" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
+                <a href="#descargarPrograma" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@
     
     
 
-    <div class="site-section section-3" data-stellar-background-ratio="0.5" style="background-image: url('images/hero_2.jpg');">
+    <div id="descargarPrograma" class="site-section section-3" data-stellar-background-ratio="0.5" style="background-image: url('images/hero_2.jpg');">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-7 text-center mb-5">
@@ -102,7 +102,7 @@
             <h1 class="text-white">Descarga nuestro programa</h1>
             <div class="row">
               <div class="col-6 programa">
-                  <button type="button" class="btn btn-primary">Descargar Programa</button>
+                  <button  type="button" class="btn btn-primary" @click="onClick()">Descargar Programa</button>
                 </div>
               </div>
           </div>
@@ -158,11 +158,15 @@
     export default {
        methods: {
           onClick() {
+            console.log('LO DESCARGARE.')
+
               axios({
-                    url: 'http://127.0.0.1:8000/programaDMAE.pdf',
+                    url: '/programaDMAE.pdf',
                     method: 'GET',
                     responseType: 'blob',
                 }).then((response) => {
+                      console.log('DESCARGADO')
+
                      var fileURL = window.URL.createObjectURL(new Blob([response.data]));
                      var fileLink = document.createElement('a');
    

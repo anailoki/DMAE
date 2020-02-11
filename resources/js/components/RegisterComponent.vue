@@ -7,9 +7,9 @@
             <div class="col-md-6 mt-5 pt-5">
             </div>
             <div class="col-md-6 mt-5 pt-5">
-                <h1 class="mb-3">Registrate</h1>
-                <h4 class="text-white">Solo tienes que completar la información que se encuentra a continuación.</h4>
-                <p class="mt-5"><a href="#register" class="btn btn-primary">¡Registrarme!</a></p>
+                <h1 class="mb-3 animated bounceInDown">Registrate</h1>
+                <h4 class="text-white animated bounceInRight slow">Solo tienes que completar la información que se encuentra a continuación.</h4>
+                <p class="mt-5"><a href="#register" class="btn btn-primary animated bounceInRight slow">¡Registrarme!</a></p>
 
               </div>
           </div>

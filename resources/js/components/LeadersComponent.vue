@@ -3,10 +3,14 @@
     <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/eye-bg.jpg')">
         <div class="container">
-          <div class="row align-items-center justify-content-center text-center">
-            <div class="col-md-8 mt-5 pt-5">
-              <h1 class="mb-3 title">Líderes del Proyecto</h1>
-              <p><a href="#" class="btn btn-primary">Conocer mas</a></p>
+          <div class="row align-items-center justify-content-center text-left">
+            <div class="col-md-6 mt-5 pt-5">
+              <h1 class="mb-3 title animated bounceInDown">Líderes del Proyecto</h1>
+              <h4 class="text-white animated bounceInLeft slow">Descubre quienes son los líderes de este Simposio</h4>
+              <p><a href="#conocer" class="btn btn-primary mt-4 animated bounceInLeft slow">Conocer mas</a></p>
+            </div>
+            <div class="col-md-6">
+
             </div>
           </div>
         </div>
@@ -16,7 +20,7 @@
 
 
     <div class="site-section bg-light">
-      <div class="container">
+      <div  id="conocer" class="container">
         <div class="row justify-content-center text-center">
           <div id="register" class="col-7 text-center mb-5">
               <h1 class="section-heading text-center">Conoce a nuestros líderes del proyecto</h1>
@@ -127,7 +131,7 @@
             <p class="lead text-white">¡Regisrate Ahora!</p>
             <h2 class="text-white  pb-5">I. Simposio Bilateral México-Alemania</h2>
             <h2 class="mb-3 text-light">Uso de Plantas Mexicanas para el tratamiento de la DMAE</h2>
-            <p class="mt-5"><a href="contact.html" class="btn btn-primary">¡Registrarme!</a></p>
+            <!-- <button class="btn btn-primary mt-5" click="menu=4">¡Registrarme!</button> -->
           </div>
         </div>
         
