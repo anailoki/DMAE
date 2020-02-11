@@ -136,7 +136,7 @@
           <div id="program" class="col-md-7 text-center">
             <h3 class="section-heading text-center">Programas del Seminario</h3>
             <p class="mb-3 lead">En esta sección encontrarás las actividades que se estarán realizado durante la semana</p>
-            <p class="mb-4 lead">Para conocer mas presiona las imagenes</p>
+            <p class="mb-4 lead">Para conocer mas presione las imágenes</p>
 
           </div>
 
