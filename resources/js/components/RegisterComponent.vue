@@ -54,7 +54,7 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                    <label class="col-md-3 form-control-label" for="text-input">Institucion</label>
+                    <label class="col-md-3 form-control-label" for="text-input">Institución</label>
                     <input v-bind:class = "(evaluated) ? (errorInstituton) ? 'is-invalid' : 'is-valid' : ''" type="text" v-model="institution" class="form-control" placeholder="Ingrese Institución">
                     <div v-show="errorInstituton" class="invalid-feedback">
                       Por favor ingrese la institución.

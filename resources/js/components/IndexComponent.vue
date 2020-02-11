@@ -135,7 +135,8 @@
         <div class="row justify-content-center  mb-5">
           <div id="program" class="col-md-7 text-center">
             <h3 class="section-heading text-center">Programas del Seminario</h3>
-            <p class="mb-5 lead">En esta sección encontrarás las actividades que se estarán realizado durante la semana</p>
+            <p class="mb-3 lead">En esta sección encontrarás las actividades que se estarán realizado durante la semana</p>
+            <p class="mb-4 lead">Para conocer mas presiona las imagenes</p>
 
           </div>
 
@@ -157,7 +158,6 @@
                 <div class="text">
                   <h3>Biodiversidad de Plantas y Terapéutica</h3>
                   <span class="category d-block mb-3">Región Endémica de México</span>
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   <a href="#descargaPDF" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
@@ -166,7 +166,6 @@
                 <div class="text">
                   <h3>Oftalmología Experimental</h3>
                   <span class="category d-block mb-3">Desarollo de nuevas terapias</span>
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   <a href="#descargaPDF" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
@@ -175,7 +174,6 @@
                 <div class="text">
                   <h3>Foro de Discusión</h3>
                   <span class="category d-block mb-3">Biodiversidad de Extractos Naturales</span>
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   <a href="#descargaPDF" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
@@ -192,7 +190,6 @@
                 <div class="text">
                   <h3>Degeneración Macular</h3>
                   <span class="category d-block mb-3">Tratamientos</span>
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   <a href="#descargaPDF" class="d-block arrow-wrap"><span class="icon-arrow_forward"></span></a>
                 </div>
               </div>
