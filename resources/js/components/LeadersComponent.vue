@@ -56,7 +56,7 @@
             
               <div class="post-entry-1-contents">
                 <span class="meta">Profesor Investigador</span>
-                <h2>Dr. Simon Bernard Iloki Lewis</h2>
+                <h2>Dr. Simon Bernard Iloki Assanga</h2>
                 <p>Investiga el aislamiento de fitocompuestos con propiedades inmunomoduladoras evualuando marcadores inflamatorios y de estrés oxidativo.</p>
               </div>
             </div>
