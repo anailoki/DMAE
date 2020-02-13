@@ -18,7 +18,7 @@ Route::get('/', function () {
 /**
  * Users
  */
-Route::resource('users', 'User\UserController', ['except' => ['create', 'edit']]); 
+Route::resource('users', 'User\UserController', ['only' => ['store']]); 
 
 Route::post('/registro', function () {
     return view('register');

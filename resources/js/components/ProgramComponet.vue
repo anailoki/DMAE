@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-5 mt-5 pt-5">
               <h1 class="mb-3 animated bounceInDown">Programa</h1>
-              <h4 class="text-white animated bounceInRight slow">En esta sección podrás conocer mas acerca de lo que el programa trae para ti</h4>
+              <h4 class="text-white animated bounceInRight slow">En esta sección podrás conocer más acerca de lo que el programa trae para ti</h4>
               <p><a href="#programa" class="btn btn-primary animated bounceInRight slow">Conocer más</a></p>
             </div>
           </div>

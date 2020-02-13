@@ -7,8 +7,8 @@
             <div class="col-md-6 mt-5 pt-5">
             </div>
             <div class="col-md-6 mt-5 pt-5">
-                <h1 class="mb-3 animated bounceInDown">Registrate</h1>
-                <h4 class="text-white animated bounceInRight slow">Solo tienes que completar la información que se encuentra a continuación.</h4>
+                <h1 class="mb-3 animated bounceInDown">Regístrate</h1>
+                <h4 class="text-white animated bounceInRight slow">Solo tienes que completar la información que se encuentra a continuación</h4>
                 <p class="mt-5"><a href="#register" class="btn btn-primary animated bounceInRight slow">¡Registrarme!</a></p>
 
               </div>
@@ -103,10 +103,10 @@
               <h3 class="text-black mb-4">Información de Contacto</h3>
               <ul class="list-unstyled footer-link">
                 <li class="d-block mb-3">
-                  <span class="d-block text-black">Direccion:</span>
+                  <span class="d-block text-black">Dirección:</span>
                   <span>Blvd. Luis Encinas y Rosales S/N,Col. Centro</span></li>
                 <li class="d-block mb-3"><span class="d-block text-black">Teléfono:</span><span>(662) 259.2208</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>simposioDMAE@gmail.com</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Correo Electrónico:</span><span>simposioDMAE@gmail.com</span></li>
               </ul>
             </div>
           </div>

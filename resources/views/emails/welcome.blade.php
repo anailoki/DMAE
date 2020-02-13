@@ -6,12 +6,10 @@ Muchas gracias por tu interes en el simposio <b>DMAE</b><br>
 
 Podras encontrar informacion del curso en nuestro sitio:
 
-<?php echo 'http:http://127.0.0.1:8001/'?>
+<?php echo 'https://thescientificresearch.com/'?>
 
 
-<p>We look forward to providing the professional services and assistance you need.<br>
-
-Sincerely, <br>
-<b> The {{ config('app.name')}} Team</b><br>
-<a href="http://clarifee.rivka.mx/">http://clarifee.rivka.mx/</a></li></p>
+Saludos, <br>
+<b> Comite Organizador</b><br>
+<a href="https://thescientificresearch.com/">thescientificresearch.com</a></li></p>
 @endcomponent

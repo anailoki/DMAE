@@ -57,7 +57,7 @@
               <div class="post-entry-1-contents">
                 <span class="meta">Profesor Investigador</span>
                 <h2>Dr. Simon Bernard Iloki Lewis</h2>
-                <p>Investiga el aislamiento de fitocompuestos con priopiedades inmunomoduladoras evualuando marcadores inflamatorios y de estrés oxidativo.</p>
+                <p>Investiga el aislamiento de fitocompuestos con propiedades inmunomoduladoras evualuando marcadores inflamatorios y de estrés oxidativo.</p>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-8 text-center mb-5">
-            <p class="lead text-white">¡Regisrate Ahora!</p>
+            <p class="lead text-white">¡Regístrate Ahora!</p>
             <h2 class="text-white  pb-5">I. Simposio Bilateral México-Alemania</h2>
             <h2 class="mb-3 text-light">Uso de Plantas Mexicanas para el tratamiento de la DMAE</h2>
             <!-- <button class="btn btn-primary mt-5" click="menu=4">¡Registrarme!</button> -->

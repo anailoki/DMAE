@@ -15,11 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        if (!$request->ajax()) return redirect('/');
+        // if (!$request->ajax()) return redirect('/');
 
-        $users = User::all();
+        // $users = User::all();
 
-        return response()->json($users, 200);
+        // return response()->json($users, 200);
     }
 
     /**

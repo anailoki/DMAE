@@ -12,7 +12,7 @@
 
                     <div class="col-md-5 mt-5 pt-5">
                         <h1 class="mb-3 title home-page">Degeneración Macular Asociada a la Edad</h1>
-                        <p>Es una enfermedad degenerativa que afecta a la retina del ojo humano y es la causa mas frecuente de ceguera no reversible a nivel mundia.</p>
+                        <p>Es una enfermedad degenerativa que afecta a la retina del ojo humano y es la causa más frecuente de ceguera no reversible a nivel mundial.</p>
                         <p class="mt-5"><a href="#program" class="btn btn-primary">¡Conocer mas!</a></p>
                     </div>
                     
@@ -51,7 +51,7 @@
                 </span>
                 <h2>Universität Kiel</h2>
                 <p>La Universidad Christian Albrecht de Kiel es una universidad pública alemana con campus universitario en la ciudad de Kiel, en Schleswig-Holstein.</p>
-                <p>El Centro Médico Universitario Schleswig-Holstein, es un hospital universitario, ubicado en Kiel y Lübeck en Alemania y Europa. Su objetivo es garantizar la atención médica en Schleswig-Holstein</p>
+                <p>El Centro Médico Universitario Schleswig-Holstein, es un hospital universitario, ubicado en Kiel y Lübeck en Alemania y Europa. Su objetivo es garantizar la atención médica en Schleswig-Holstein.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
@@ -79,7 +79,7 @@
         <div class="row justify-content-center text-center">
           <div class="col-7 text-center mb-5">
             <p class="lead text-white">México - Alemania</p>
-            <h2 class="text-white">En este evento encontras las siguientes actividades</h2>
+            <h2 class="text-white">En este evento encontrarás las siguientes actividades</h2>
           </div>
         </div>
         
@@ -136,7 +136,7 @@
           <div id="program" class="col-md-7 text-center">
             <h3 class="section-heading text-center">Programas del Seminario</h3>
             <p class="mb-3 lead">En esta sección encontrarás las actividades que se estarán realizado durante la semana</p>
-            <p class="mb-4 lead">Para conocer mas presione las imágenes</p>
+            <p class="mb-4 lead">Para conocer más presione las imágenes</p>
 
           </div>
 
@@ -319,7 +319,7 @@
                   <span>Dr. Simon Bernard Iloki Assanga</span>
                 </div>
                 <blockquote>
-                  <p>Investiga el aislamiento de fitocompuestos con priopiedades inmunomoduladoras evualuando marcadores inflamatorios y de estrés oxidativo.</p>
+                  <p>Investiga el aislamiento de fitocompuestos con propiedades inmunomoduladoras evualuando marcadores inflamatorios y de estrés oxidativo.</p>
                 </blockquote>
                 
               </div>
@@ -346,7 +346,7 @@
           <div class="col-7 text-center mb-5">
             <h2 class="text-white section-heading primary-color-icon text-center">Descarga Nuestro Programa</h2>
             <p class="lead text-white mb-5">¡Anímate a esta gran oportunidad!</p>
-            <p class="lead text-white mb-5">Empieza a conocer mas...</p>
+            <p class="lead text-white mb-5">Empieza a conocer más...</p>
             <button  type="button" class="btn btn-primary" @click="onClick()">Descargar Programa</button>
             <!-- <p><a href="" class="btn btn-primary">¡Registrarme!</a></p> -->
           </div>
@@ -386,13 +386,13 @@
             <div class="form-group row">
               <div class="col-md-6 form-control-label" for="text-input">
                 <label class="col-md-6 form-control-label" for="text-input">Correo Electrónico</label>
-                <input v-bind:class = "(evaluated) ? (errorEmail) ? 'is-invalid' : 'is-valid' : ''" type="text"  v-model="email" class="form-control" placeholder="Ingrese Correo Electronico" required>
+                <input v-bind:class = "(evaluated) ? (errorEmail) ? 'is-invalid' : 'is-valid' : ''" type="text"  v-model="email" class="form-control" placeholder="Ingrese Correo Electrónico" required>
                 <div v-show="errorEmail" class="invalid-feedback">
                   Por favor ingrese su correo.
                 </div>
               </div>
               <div class="col-md-6">
-                  <label class="col-md-3 form-control-label" for="text-input">Institucion</label>
+                  <label class="col-md-3 form-control-label" for="text-input">Institución</label>
                   <input v-bind:class = "(evaluated) ? (errorInstituton) ? 'is-invalid' : 'is-valid' : ''" type="text" v-model="institution" class="form-control" placeholder="Ingrese Institución">
                   <div v-show="errorInstituton" class="invalid-feedback">
                     Por favor ingrese la institución.
